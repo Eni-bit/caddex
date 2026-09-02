@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project · CADDex</title>
+    <link rel="stylesheet" href="static/style.css?v=6">
+</head>
+<body data-page="project">
+    <div class="site-wrap">
+        <header class="brand">
+            <h1>CADDEX</h1>
+            <p>SolidWorks design systems</p>
+        </header>
+
+        <nav class="tabs" id="site-nav"></nav>
+
+        <div class="card-details">
+            <div id="project-cover"></div>
+            <h1 id="project-name"></h1>
+            <p><strong>Category: </strong><em id="project-category"></em></p>
+            <p><strong>Software: </strong><em id="project-software"></em></p>
+            <p><strong>Year: </strong><em id="project-year"></em></p>
+            <p><strong>Description: </strong></p>
+            <p><em id="project-description"></em></p>
+            <a href="index.html" class="back-button">Back to Projects</a>
+        </div>
+
+        <section class="media-section" id="pictures-section" hidden>
+            <h2>Pictures</h2>
+            <p class="media-help">Renders and screenshots of this project.</p>
+            <div class="gallery-grid" id="pictures-grid"></div>
+        </section>
+
+        <section class="media-section" id="drawings-section" hidden>
+            <h2>Drawings</h2>
+            <p class="media-help">Technical drawings. Click an image to view it larger.</p>
+            <div class="gallery-grid" id="drawings-grid"></div>
+        </section>
+
+        <section class="media-section" id="videos-section" hidden>
+            <h2>Videos</h2>
+            <p class="media-help">Assembly, collapse, and rotation animations from YouTube.</p>
+            <div class="gallery-grid" id="videos-grid"></div>
+        </section>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-image" alt="Enlarged drawing or picture">
+    </div>
+
+    <script src="static/projects-data.js"></script>
+    <script src="static/portfolio.js"></script>
+</body>
+</html>

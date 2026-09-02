@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.db
+*.mp4
+*.webm
+*.mov
+*.ogg
+.DS_Store

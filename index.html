@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CADDex</title>
+    <link rel="stylesheet" href="static/style.css?v=6">
+</head>
+<body data-page="home">
+    <div class="site-wrap">
+        <header class="brand">
+            <h1>CADDEX</h1>
+            <p>SolidWorks design systems</p>
+        </header>
+
+        <nav class="tabs" id="site-nav"></nav>
+
+        <section id="projects-panel">
+            <h2 class="panel-title" id="panel-title">All Projects</h2>
+            <div class="content" id="project-grid"></div>
+            <section class="showreel-section" id="showreel" hidden></section>
+        </section>
+
+        <section id="about-panel" hidden>
+            <h2 class="panel-title">About Me</h2>
+            <div class="about-grid no-photo">
+                <div class="photo-frame" hidden>
+                    <img id="about-photo" alt="Profile photo">
+                </div>
+                <div class="about-copy">
+                    <h2 id="about-name"></h2>
+                    <p class="role" id="about-role"></p>
+                    <p id="about-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-panel" hidden>
+            <h2 class="panel-title">Contact</h2>
+            <div class="contact-list" id="contact-list"></div>
+        </section>
+    </div>
+
+    <script src="static/projects-data.js"></script>
+    <script src="static/portfolio.js"></script>
+</body>
+</html>
