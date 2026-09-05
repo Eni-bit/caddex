@@ -328,7 +328,7 @@ function projectTabTitle(project) {
 function renderFooter() {
     var footer = document.getElementById('site-footer');
     if (!footer) return;
-    footer.innerHTML = '<p>Nadine Grace Sibonga | CADDex — CAD Modeling Portfolio</p>';
+    footer.innerHTML = '<p>Nadine Grace Sibonga | CADDex — CAD Modeling Portfolio · 2026</p>';
 }
 
 function hidePanels() {
