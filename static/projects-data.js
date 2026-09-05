@@ -1,9 +1,4 @@
-/* ============================================================
-   EDIT THIS FILE to update copy, pictures, drawings,
-   and YouTube URLs. Videos stay on YouTube (use Unlisted).
-   Photo: static/about/profile.jpg
-   Contact form uses Formspree. Do not put email, GitHub, or phone here.
-   ============================================================ */
+/* Site copy, pictures, drawings, and YouTube URLs. */
 
 window.CADDEX = {
     profile: {

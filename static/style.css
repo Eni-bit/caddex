@@ -151,15 +151,6 @@ body {
     box-shadow: var(--glow);
 }
 
-.hero-kicker {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin: 0 0 12px;
-}
-
 .hero h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -209,24 +200,6 @@ body {
     color: #041018;
     background: linear-gradient(90deg, var(--cyan), #7af7ff);
     border-color: transparent;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-}
-
-.skill-card {
-    padding: 22px 18px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: var(--panel);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .panel-title {
@@ -347,49 +320,11 @@ body {
 
 .card-body { padding: 20px 20px 24px; position: relative; text-align: center; }
 
-.chip {
-    display: inline-block;
-    margin: 0 0 8px;
-    padding: 3px 8px;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    border: 1px solid rgba(0, 246, 255, 0.35);
-    border-radius: 999px;
-}
-
 .card h2 {
     margin: 0;
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--cyan);
-}
-
-.card-meta {
-    margin: 6px 0 0;
-    color: var(--muted);
-}
-
-.empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: var(--muted);
-    border: 1px dashed var(--line);
-    border-radius: 16px;
-    padding: 36px 16px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 36px;
-    align-items: center;
-    padding: 28px;
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    background: var(--panel);
-    box-shadow: var(--glow);
 }
 
 .photo-frame {
@@ -422,19 +357,6 @@ body {
     50% { opacity: 1; }
 }
 
-.about-copy h2 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-    margin: 0 0 6px;
-}
-
-.story-block .about-name {
-    font-size: 1.2rem;
-    margin: 0 0 6px;
-    text-align: center;
-    color: var(--cyan);
-}
-
 .story-block .greeting {
     font-size: 1.45rem;
     margin: 0 0 8px;
@@ -445,17 +367,6 @@ body {
     color: var(--cyan);
     margin: 0 0 24px;
     text-align: center;
-}
-
-.about-copy p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #d5e7f5;
-    margin: 0;
-}
-
-.about-grid.no-photo {
-    grid-template-columns: 1fr;
 }
 
 .card-details {
@@ -1190,19 +1101,6 @@ button.gallery-item {
 
 .skill-group li {
     text-align: left;
-}
-
-.skill-card span {
-    display: block;
-    color: var(--cyan);
-    font-size: 0.62rem;
-    margin-bottom: 8px;
-}
-
-.skill-card strong {
-    display: block;
-    font-weight: 600;
-    letter-spacing: 0.04em;
 }
 
 .intro {

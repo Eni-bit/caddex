@@ -464,7 +464,7 @@ function renderContact() {
             return;
         }
         if (!endpoint) {
-            if (note) note.textContent = 'The form is ready, but it is not connected yet. Add a private Formspree link in projects-data.js so messages can be delivered without showing your email.';
+            if (note) note.textContent = 'The form is not connected yet.';
             return;
         }
         var name = document.getElementById('contact-name').value.trim();
