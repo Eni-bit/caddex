@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eni-bit.github.io/caddex/sitemap.xml

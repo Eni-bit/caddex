@@ -313,10 +313,19 @@ function renderNav(activeTab) {
     }).join('');
 }
 
+function personName() {
+    return (CADDEX.profile && CADDEX.profile.name) || 'Nadine Grace Sibonga';
+}
+
+function pageTitle(page) {
+    var name = personName();
+    return page ? page + ' · ' + name + ' · CADDex' : name + ' · CADDex';
+}
+
 function renderFooter() {
     var footer = document.getElementById('site-footer');
     if (!footer) return;
-    footer.innerHTML = '<p>CADDex · CAD Modeling &amp; Design Portfolio</p>';
+    footer.innerHTML = '<p>CADDex · ' + personName() + ' · CAD Modeling &amp; Design Portfolio</p>';
 }
 
 function hidePanels() {
@@ -334,31 +343,31 @@ function renderHomepage() {
     hidePanels();
 
     if (tab === 'about') {
-        document.title = 'About · CADDex';
+        document.title = pageTitle('About');
         document.getElementById('about-panel').hidden = false;
         renderAbout();
         return;
     }
     if (tab === 'projects') {
-        document.title = 'Projects · CADDex';
+        document.title = pageTitle('Projects');
         document.getElementById('projects-panel').hidden = false;
         renderProjects();
         return;
     }
     if (tab === 'skills') {
-        document.title = 'Skills · CADDex';
+        document.title = pageTitle('Skills');
         document.getElementById('skills-panel').hidden = false;
         renderSkills();
         return;
     }
     if (tab === 'contact') {
-        document.title = 'Contact · CADDex';
+        document.title = pageTitle('Contact');
         document.getElementById('contact-panel').hidden = false;
         renderContact();
         return;
     }
 
-    document.title = 'CADDex';
+    document.title = pageTitle();
     document.getElementById('home-panel').hidden = false;
     renderHome();
 }
@@ -546,7 +555,7 @@ function renderProject() {
 
     renderNav('projects');
     renderFooter();
-    document.title = project.name + ' · CADDex';
+    document.title = pageTitle(project.pageTitle || project.name);
 
     var coverBox = document.getElementById('project-cover');
     coverBox.innerHTML = coverHtml(project, false);

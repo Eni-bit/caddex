@@ -157,6 +157,13 @@ body {
     margin: 0 0 8px;
 }
 
+.hero-role {
+    color: var(--cyan);
+    margin: 0 0 28px;
+    font-size: 1.12rem;
+    letter-spacing: 0.04em;
+}
+
 .hero-copy {
     max-width: 760px;
     margin: 0 auto 32px;

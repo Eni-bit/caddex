@@ -11,7 +11,7 @@ window.CADDEX = {
 
     home: {
         intro: [
-            'Welcome to CADDex, my personal CAD portfolio showcasing my work in SOLIDWORKS—from individual components and assemblies to technical drawings and assembly animations.',
+            'Welcome to CADDex, the personal CAD portfolio of Nadine Grace Sibonga. It showcases SOLIDWORKS work—from individual components and assemblies to technical drawings and assembly animations.',
             'Explore my projects and see how I approach modeling, assembly, and technical documentation.'
         ]
     },
