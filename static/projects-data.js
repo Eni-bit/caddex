@@ -9,10 +9,17 @@ window.CADDEX = {
         formEndpoint: 'https://formspree.io/f/mjyvoyqw'
     },
 
+    titles: {
+        home: 'Nadine Grace Sibonga | CADDex — CAD Modeling Portfolio',
+        about: 'About Nadine Grace Sibonga | CADDex',
+        projects: 'CAD Projects | CADDex — Nadine Grace Sibonga',
+        skills: 'CAD & Engineering Skills | CADDex',
+        contact: 'Contact Nadine Grace Sibonga | CADDex'
+    },
+
     home: {
         intro: [
-            'Welcome to CADDex, the personal CAD portfolio of Nadine Grace Sibonga. It showcases SOLIDWORKS work—from individual components and assemblies to technical drawings and assembly animations.',
-            'Explore my projects and see how I approach modeling, assembly, and technical documentation.'
+            'Welcome to CADDex, the personal CAD portfolio of Nadine Grace Sibonga. The portfolio showcases SOLIDWORKS projects ranging from individual component modeling and assemblies to technical drawings and CAD animations.'
         ]
     },
 

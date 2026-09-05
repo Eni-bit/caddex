@@ -313,19 +313,22 @@ function renderNav(activeTab) {
     }).join('');
 }
 
-function personName() {
-    return (CADDEX.profile && CADDEX.profile.name) || 'Nadine Grace Sibonga';
+function tabTitle(page) {
+    var titles = CADDEX.titles || {};
+    if (page && titles[page]) return titles[page];
+    return titles.home || 'Nadine Grace Sibonga | CADDex — CAD Modeling Portfolio';
 }
 
-function pageTitle(page) {
-    var name = personName();
-    return page ? page + ' · ' + name + ' · CADDex' : name + ' · CADDex';
+function projectTabTitle(project) {
+    if (project.tabTitle) return project.tabTitle;
+    if (project.homeLabel) return project.name + ' — ' + project.homeLabel + ' | CADDex';
+    return project.name + ' | CADDex';
 }
 
 function renderFooter() {
     var footer = document.getElementById('site-footer');
     if (!footer) return;
-    footer.innerHTML = '<p>CADDex · ' + personName() + ' · CAD Modeling &amp; Design Portfolio</p>';
+    footer.innerHTML = '<p>Nadine Grace Sibonga | CADDex — CAD Modeling Portfolio</p>';
 }
 
 function hidePanels() {
@@ -343,31 +346,31 @@ function renderHomepage() {
     hidePanels();
 
     if (tab === 'about') {
-        document.title = pageTitle('About');
+        document.title = tabTitle('about');
         document.getElementById('about-panel').hidden = false;
         renderAbout();
         return;
     }
     if (tab === 'projects') {
-        document.title = pageTitle('Projects');
+        document.title = tabTitle('projects');
         document.getElementById('projects-panel').hidden = false;
         renderProjects();
         return;
     }
     if (tab === 'skills') {
-        document.title = pageTitle('Skills');
+        document.title = tabTitle('skills');
         document.getElementById('skills-panel').hidden = false;
         renderSkills();
         return;
     }
     if (tab === 'contact') {
-        document.title = pageTitle('Contact');
+        document.title = tabTitle('contact');
         document.getElementById('contact-panel').hidden = false;
         renderContact();
         return;
     }
 
-    document.title = pageTitle();
+    document.title = tabTitle('home');
     document.getElementById('home-panel').hidden = false;
     renderHome();
 }
@@ -555,7 +558,7 @@ function renderProject() {
 
     renderNav('projects');
     renderFooter();
-    document.title = pageTitle(project.pageTitle || project.name);
+    document.title = projectTabTitle(project);
 
     var coverBox = document.getElementById('project-cover');
     coverBox.innerHTML = coverHtml(project, false);

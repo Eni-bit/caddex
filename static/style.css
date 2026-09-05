@@ -1178,7 +1178,7 @@ button.gallery-item {
     text-align: center;
     color: var(--muted);
     font-size: 0.9rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.02em;
 }
 
 .site-footer p { margin: 4px 0; }
