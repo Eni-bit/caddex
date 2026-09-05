@@ -4,53 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project · CADDex</title>
-    <link rel="stylesheet" href="static/style.css?v=6">
+    <link rel="stylesheet" href="static/style.css?v=47">
 </head>
 <body data-page="project">
     <div class="site-wrap">
         <header class="brand">
-            <h1>CADDEX</h1>
-            <p>SolidWorks design systems</p>
+            <h1>CADDex</h1>
+            <p>CAD Modeling &amp; Design Portfolio</p>
         </header>
 
         <nav class="tabs" id="site-nav"></nav>
 
         <div class="card-details">
             <div id="project-cover"></div>
+            <p class="project-number" id="project-number"></p>
             <h1 id="project-name"></h1>
-            <p><strong>Category: </strong><em id="project-category"></em></p>
-            <p><strong>Software: </strong><em id="project-software"></em></p>
-            <p><strong>Year: </strong><em id="project-year"></em></p>
-            <p><strong>Description: </strong></p>
-            <p><em id="project-description"></em></p>
-            <a href="index.html" class="back-button">Back to Projects</a>
+            <p class="project-meta"><strong>Software: </strong><em id="project-software"></em></p>
+            <div class="project-lede" id="project-summary"></div>
+            <a href="index.html?tab=projects" class="back-button">Back to Projects</a>
         </div>
 
-        <section class="media-section" id="pictures-section" hidden>
-            <h2>Pictures</h2>
-            <p class="media-help">Renders and screenshots of this project.</p>
-            <div class="gallery-grid" id="pictures-grid"></div>
+        <h2 class="panel-title" id="project-contents-title" hidden>Project Contents</h2>
+        <nav class="project-filters" id="project-subnav" hidden></nav>
+        <div id="project-sections"></div>
+        <section class="media-section" id="project-skills-block" hidden>
+            <h2>Skills Demonstrated</h2>
+            <div class="skill-chips" id="project-skills"></div>
         </section>
 
-        <section class="media-section" id="drawings-section" hidden>
-            <h2>Drawings</h2>
-            <p class="media-help">Technical drawings. Click an image to view it larger.</p>
-            <div class="gallery-grid" id="drawings-grid"></div>
-        </section>
-
-        <section class="media-section" id="videos-section" hidden>
-            <h2>Videos</h2>
-            <p class="media-help">Assembly, collapse, and rotation animations from YouTube.</p>
-            <div class="gallery-grid" id="videos-grid"></div>
-        </section>
+        <footer class="site-footer" id="site-footer"></footer>
     </div>
 
     <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-image" alt="Enlarged drawing or picture">
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+        <div class="lightbox-stage">
+            <img id="lightbox-image" alt="Enlarged drawing or picture">
+            <p id="lightbox-caption"></p>
+        </div>
+        <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
     </div>
 
-    <script src="static/projects-data.js"></script>
-    <script src="static/portfolio.js"></script>
+    <script src="static/projects-data.js?v=47"></script>
+    <script src="static/portfolio.js?v=47"></script>
 </body>
 </html>
