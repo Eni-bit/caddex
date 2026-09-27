@@ -132,10 +132,19 @@ function pictureCard(path) {
 }
 
 function partSlides(part) {
+    if (part.slides && part.slides.length) {
+        return part.slides.map(function (slide) {
+            return {
+                src: slide.src,
+                caption: slide.caption || part.title,
+                kind: slide.kind || part.kind || 'View'
+            };
+        });
+    }
     var slides = [{
         src: part.picture,
         caption: part.title,
-        kind: 'Part'
+        kind: part.kind || 'Part'
     }];
     (part.drawings || []).forEach(function (path) {
         slides.push({
@@ -248,11 +257,15 @@ function sectionDrawingGroups(section) {
 }
 
 function drawingPreviewCard(group, index) {
+    var first = group.items[0];
+    var thumb = typeof first === 'string' ? first : (first && first.src) || '';
     var count = group.items.length;
+    var unit = group.countLabel || (count === 1 ? 'drawing' : 'drawings');
+    if (group.countLabel && count !== 1 && unit.charAt(unit.length - 1) !== 's') unit += 's';
     return '<button type="button" class="gallery-item part-pick drawing-pick' + (index === 0 ? ' active' : '') + '" data-drawing-group="' + index + '">' +
-        '<div class="media-frame media-frame-drawing"><img src="' + group.items[0] + '" alt="' + group.title + '"></div>' +
+        '<div class="media-frame media-frame-drawing"><img src="' + thumb + '" alt="' + group.title + '"></div>' +
         '<p>' + group.title + '</p>' +
-        '<p class="count-meta">' + count + (count === 1 ? ' drawing' : ' drawings') + '</p>' +
+        '<p class="count-meta">' + count + ' ' + unit + '</p>' +
         '</button>';
 }
 
@@ -265,19 +278,32 @@ function drawingsViewerHtml(groups) {
             '<div class="part-frame media-frame"><img class="zoomable" alt=""></div>' +
             '<button type="button" class="part-nav drawing-nav-next" aria-label="Next">›</button>' +
         '</div>' +
-        '<p class="part-kind">Drawing</p>' +
+        '<p class="part-kind"></p>' +
         '<p class="part-caption"></p>' +
         '<p class="part-counter"></p>' +
         '</div>';
 }
 
 function drawingSlides(group) {
-    return (group.items || []).map(function (path) {
-        return { src: path, caption: modelViewCaption(group.title, path) };
+    return (group.items || []).map(function (item) {
+        if (item && item.src) {
+            return {
+                src: item.src,
+                caption: item.caption || group.title,
+                kind: item.kind || group.kind || 'Drawing'
+            };
+        }
+        var path = String(item || '');
+        var name = path.toLowerCase();
+        var caption = modelViewCaption(group.title, path);
+        if (name.indexOf('no-dim') !== -1) caption = group.title + '  ·  without dimensions';
+        else if (name.indexOf('with-dim') !== -1 || /layout\.png$/.test(name)) caption = group.title + '  ·  with dimensions';
+        return { src: path, caption: caption, kind: group.kind || 'Drawing' };
     });
 }
 
 function cardSummary(project) {
+    if (project.listingSummary) return project.listingSummary;
     if (Array.isArray(project.summary)) return project.summary[0] || '';
     return project.summary || '';
 }
@@ -286,14 +312,19 @@ function cardHtml(project, compact) {
     var firstSection = (project.sections && project.sections[0]) ? project.sections[0].id : 'overview';
     var subtitle = compact ? (project.homeLabel || project.category || '') : (project.pageTitle || project.category || '');
     var summary = compact ? '' : cardSummary(project);
-    return '<article class="card">' +
-        '<a class="card-link" href="project.html?slug=' + encodeURIComponent(project.slug) + '#' + firstSection + '">' +
-        coverHtml(project, true) +
+    var body = coverHtml(project, true) +
         '<div class="card-body">' +
         '<p class="project-index">' + numberedTitle(project) + '</p>' +
         '<h2>' + subtitle + '</h2>' +
         (summary ? '<p class="card-summary">' + summary + '</p>' : '') +
-        '</div></a></article>';
+        '</div>';
+    if (project.comingSoon) {
+        return '<article class="card card-soon">' + body + '</article>';
+    }
+    return '<article class="card">' +
+        '<a class="card-link" href="project.html?slug=' + encodeURIComponent(project.slug) + '#' + firstSection + '">' +
+        body +
+        '</a></article>';
 }
 
 function queryValue(name) {
@@ -667,6 +698,7 @@ function setupDrawingViewer(root, groups) {
     var slideIndex = 0;
     var img = root.querySelector('.part-frame img');
     var frame = root.querySelector('.part-frame');
+    var kind = root.querySelector('.part-kind');
     var caption = root.querySelector('.part-caption');
     var counter = root.querySelector('.part-counter');
     var prev = root.querySelector('.drawing-nav-prev');
@@ -682,6 +714,7 @@ function setupDrawingViewer(root, groups) {
         img.src = item.src;
         img.alt = item.caption;
         frame.classList.add('media-frame-drawing');
+        if (kind) kind.textContent = item.kind || groups[groupIndex].kind || 'Drawing';
         caption.textContent = item.caption;
         var many = slides.length > 1;
         counter.hidden = !many;

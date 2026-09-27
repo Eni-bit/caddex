@@ -19,7 +19,7 @@ window.CADDEX = {
 
     home: {
         intro: [
-            'Welcome to CADDex, the personal CAD portfolio of Nadine Grace Sibonga. The portfolio showcases SOLIDWORKS projects ranging from individual component modeling and assemblies to technical drawings and CAD animations.'
+            'Welcome to CADDex, the personal CAD portfolio of Nadine Grace Sibonga. The portfolio showcases projects in SOLIDWORKS and AutoCAD, ranging from 3D component and assembly modeling to 2D drafting, technical drawings, CAD documentation, and animations.'
         ]
     },
 
@@ -32,8 +32,8 @@ window.CADDEX = {
             'Today, I am focusing on further developing my SOLIDWORKS and CAD skills through self-directed projects and hands-on practice. I am pursuing opportunities where I can apply my engineering background and growing CAD skills in a CAD-focused role, particularly in remote work environments.'
         ],
         whyCad: [
-            'My interest in CAD developed during my Mechanical Engineering studies, particularly through hands-on work with SOLIDWORKS.',
-            'I enjoy the process of taking an object or concept and breaking it down into individual components, modeling those components, and bringing them together into a complete assembly.',
+            'My interest in CAD developed during my Mechanical Engineering studies, particularly through hands-on work with SOLIDWORKS. I enjoy the process of taking an object or concept, breaking it down into individual components, modeling those components, and bringing them together into a complete assembly.',
+            'As I continue developing my skills, I have also expanded my experience into AutoCAD for 2D drafting, drawing layouts, elevations, annotations, and CAD documentation.',
             'I created CADDex as a way to document my CAD projects, continue developing my skills, and showcase my progress.'
         ],
         whyCadFocusLabel: 'My current focus includes:',
@@ -42,8 +42,9 @@ window.CADDEX = {
             'Assembly Modeling',
             'Assembly Mates',
             'Technical Drawings',
-            'Component Modeling',
+            '2D CAD Drafting',
             'CAD Documentation',
+            'Component Modeling',
             'Exploded/Collapse Animations'
         ],
         fromObjectsKicker: 'From Real Objects to CAD',
@@ -66,7 +67,7 @@ window.CADDEX = {
         workingTowardTitle: "What I'm Working Toward",
         workingToward: [
             'I am continuing to develop my SOLIDWORKS and CAD skills through personal projects and hands-on practice.',
-            'My goal is to build on my engineering background and technical experience while growing into CAD-focused work involving 3D modeling, assemblies, technical drawings, and related engineering support.'
+            'My goal is to build on my engineering background and technical experience while growing into CAD-focused work involving 3D modeling, assemblies, technical drawings, drafting, and related engineering support.'
         ],
         ctaTitle: 'Interested in my work?',
         ctaProjects: 'View My Projects',
@@ -94,7 +95,12 @@ window.CADDEX = {
                     items: [
                         '2D/3D CAD',
                         'Technical Drafting',
-                        'Basic Drawing Creation'
+                        'Floor Plan & Elevation Drafting',
+                        'CAD Blocks',
+                        'Layer Organization',
+                        'Construction Lines',
+                        'Dimensioning & Annotation',
+                        'Drawing Layouts & PDF Output'
                     ]
                 }
             ]
@@ -403,6 +409,106 @@ window.CADDEX = {
                             items: [
                                 'static/projects/conveyor/drawings/drawing_conveyor-right.png',
                                 'static/projects/conveyor/drawings/drawing_conveyor-top.png'
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'Residential Floor Plan',
+            slug: 'floor-plan',
+            number: '04',
+            homeLabel: 'AutoCAD Drafting & Elevation',
+            pageTitle: 'AutoCAD Drafting & Elevation',
+            category: 'AutoCAD Drafting',
+            software: 'AutoCAD',
+            year: '2026',
+            featured: true,
+            listingSummary: 'An AutoCAD drafting project for a single-story residence. The work includes a dimensioned floor plan and front elevation, with modifications to the layout, dimensions, and elevation details. The project also demonstrates the use of CAD blocks, layers, construction lines, and drawing layouts.',
+            summary: 'A 2D AutoCAD drafting project focused on creating and modifying a residential floor plan and front elevation. The project was developed using a SourceCAD practice drawing as a reference, with modifications made to the floor-plan layout and selected dimensions. The front elevation was also modified by changing the viewing orientation and architectural details. The project incorporates CAD blocks, organized layers, construction lines, dimensioning, annotations, and drawing layouts prepared for PDF output.',
+            cover: 'static/projects/floor-plan/covers/floor-plan.png',
+            skillsDemonstrated: [
+                '2D AutoCAD Drafting',
+                'Floor Plan Creation & Modification',
+                'Elevation Drawing',
+                'CAD Blocks',
+                'Layer Organization',
+                'Construction Lines',
+                'Dimensioning',
+                'Annotation',
+                'Technical Drawing Layout',
+                'CAD Documentation',
+                'Drawing Organization'
+            ],
+            sections: [
+                {
+                    id: 'documentation',
+                    title: 'Drafting & Documentation',
+                    text: 'Use Next to move through each animation in the same player.',
+                    videos: [
+                        { url: 'https://youtu.be/pzf-nVp05cQ', caption: 'Floor Plan — Layout, Layers, & PDF Output', cover: 'static/projects/floor-plan/covers/floor-plan-layout.png' },
+                        { url: 'https://youtu.be/SEJmHq8ePSk', caption: 'Floor Plan — Layer Organization', cover: 'static/projects/floor-plan/covers/floor-plan-layers.png' },
+                        { url: 'https://youtu.be/QqNPOoNt3Is', caption: 'Front Elevation — Construction Lines', cover: 'static/projects/floor-plan/covers/front-elevation-construction.png' }
+                    ]
+                },
+                {
+                    id: 'floor-plan',
+                    title: 'Floor Plan',
+                    text: 'Click Floor Plan, then use Next to move through each view.',
+                    parts: [
+                        {
+                            title: 'Floor Plan',
+                            kind: 'View',
+                            picture: 'static/projects/floor-plan/covers/floor-plan-no-dim.png',
+                            slides: [
+                                { src: 'static/projects/floor-plan/covers/floor-plan-no-dim.png', caption: 'Floor Plan · without dimensions', kind: 'View' },
+                                { src: 'static/projects/floor-plan/covers/floor-plan-layers.png', caption: 'Floor Plan · with dimensions', kind: 'View' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_floor-plan-layout-no-dim.png', caption: 'Floor Plan Layout · without dimensions', kind: 'View' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_floor-plan-layout.png', caption: 'Floor Plan Layout · with dimensions', kind: 'View' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'elevation',
+                    title: 'Elevation',
+                    text: 'Click Front Elevation, then use Next to move through each view.',
+                    parts: [
+                        {
+                            title: 'Front Elevation',
+                            kind: 'View',
+                            picture: 'static/projects/floor-plan/covers/elevation-no-dim.png',
+                            slides: [
+                                { src: 'static/projects/floor-plan/covers/elevation-no-dim.png', caption: 'Front Elevation · without dimensions', kind: 'View' },
+                                { src: 'static/projects/floor-plan/covers/front-elevation-construction.png', caption: 'Front Elevation · construction lines', kind: 'View' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_elevation-layout-no-dim.png', caption: 'Front Elevation Layout · without dimensions', kind: 'View' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_elevation-layout-with-dim.png', caption: 'Front Elevation Layout · with dimensions', kind: 'View' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'layouts',
+                    title: 'Drawing Layouts',
+                    text: 'Click a layout, then use Next to move through each view.',
+                    drawingGroups: [
+                        {
+                            title: 'Floor Plan Layout',
+                            kind: 'Layout',
+                            countLabel: 'view',
+                            items: [
+                                { src: 'static/projects/floor-plan/drawings/drawing_floor-plan-layout-no-dim.png', caption: 'Floor Plan Layout · without dimensions', kind: 'Layout' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_floor-plan-layout.png', caption: 'Floor Plan Layout · with dimensions', kind: 'Layout' }
+                            ]
+                        },
+                        {
+                            title: 'Front Elevation Layout',
+                            kind: 'Layout',
+                            countLabel: 'view',
+                            items: [
+                                { src: 'static/projects/floor-plan/drawings/drawing_elevation-layout-no-dim.png', caption: 'Front Elevation Layout · without dimensions', kind: 'Layout' },
+                                { src: 'static/projects/floor-plan/drawings/drawing_elevation-layout-with-dim.png', caption: 'Front Elevation Layout · with dimensions', kind: 'Layout' }
                             ]
                         }
                     ]
